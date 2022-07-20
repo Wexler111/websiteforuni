@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/afd4b8ec18.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="script.js"></script>
+    <title>
+         Colonizing program
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        i = 0;
+        $(document).ready(function(){
+            $("input").keypress(function(){
+                $("span").text(i += 1);
+            });
+        });
+    </script>
+</head>
+<body>
+<audio id="myAudio">
+    <source src="marss.mp3" type="audio/mpeg">
+</audio>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" >
+            <img src="icon.png" width="30" height="30">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="index.html">
+                Colonizing Mars
+            </a>
+
+            <a class="navbar-item" href="page2.html">
+
+                Books
+            </a>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</nav>
+
+
+<div class="box">
+    <article class="media">
+        <div class="media-left">
+            <figure class="image is-64x64">
+                <img  src="space.png" alt="Image">
+            </figure>
+
+        </div>
+        <div class="media-content">
+            <div class="content">
+                <p>
+                <strong id="type-js"></strong>
+                    <br>
+                <p >For search for life, understanding the surface and the planet's evolution, and preparing for future human exploration. </p>
+                <p>
+                    Below you may view deeper explanation 
+                </p>
+
+            </nav>
+        </div>
+    </article>
+</div>
+    <div class="tile is-ancestor">
+        <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child box">
+                <p class="title">Sound of Mars</p>
+                <p>
+                It has an unusual atmosphere compared to Earth, 
+                </p>
+                <p>
+                with very different temperature, density, and chemistry
+                </p>
+                <p>
+                These differences are three main affects on the way sound works there.
+                </p>
+                </br>
+                <button class="button is-link is-focused" onclick="playAudio()" type="button">Play Audio</button>
+                &nbsp;&nbsp;&nbsp;<button class="button is-link is-focused" onclick="pauseAudio()" type="button">Pause Audio</button>
+
+            </div>
+            <div class="tile is-child box">
+                <p class="title">First ever photo of Mars </p>
+                <p>Photo took by Astronomers in September 11, 1956</p>
+                <img src="firstm.png"  class="center"></br>
+                <button onclick="myFunction()" class="button is-link is-focused">Link to project</button>
+
+                <p id="demo5"></p>
+
+
+
+            </div>
+        </div>
+        <div class="tile is-parent">
+            <div class="tile is-child box">
+                <p class="title">Why Mars?
+                </p>
+                <p>At an average distance of 140 million miles, Mars is one of Earth's closest habitable neighbors. Mars is about half again as far from the Sun as Earth is, so it still has decent sunlight. It is a little cold, but we can warm it up. Its atmosphere is primarily CO2 with some nitrogen and argon and a few other trace elements, which means that we can grow plants on Mars just by compressing the atmosphere. Gravity on Mars is about 38% of that of Earth, so you would be able to lift heavy things and bound around. Furthermore, the day is remarkably close to that of Earth.</p>
+               <br>
+                <img src="secondm.png"  class="center"></br>
+
+
+
+            </div>
+        </div>
+    </div>
+<script>
+    var x = document.getElementById("myAudio");
+
+    function playAudio() {
+        x.play();
+    }
+
+    function pauseAudio() {
+        x.pause();
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let letter = 0;
+        const text = "Colonization of Mars";
+        function typeText() {
+            if (letter < text.length) {
+                document.getElementById("type-js").innerHTML += text.charAt(letter);
+                letter++;
+                let speed = Math.floor(Math.random() * 150) + 50;
+                setTimeout(typeText, speed);
+            }
+        }
+        typeText();
+    });
+    function myFunction() {
+        document.getElementById("demo5").innerHTML = "https://go.nasa.gov/3IVc3Ke";
+
+
+
+        document.getElementById("demo1").addEventListener("click", myFunction1);
+
+        function myFunction1() {
+            document.getElementById("demo1").innerHTML = "YOU CLICKED ME!";
+        }
+    }
+
+    function bigImg(x) {
+        x.style.height = "64px";
+        x.style.width = "64px";
+    }
+
+    function normalImg(x) {
+        x.style.height = "32px";
+        x.style.width = "32px";
+    }
+</script>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <button class="button is-dark" onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button></br></br>
+        <p id="demo"></p>
+        </p>
+
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="clock.png"  width="32" height="32">
+
+    </div>
+</footer>
+</body>
+</html>
